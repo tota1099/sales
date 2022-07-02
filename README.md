@@ -1,24 +1,3 @@
-# README
+# Sales
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This project was built on the [one bit code course](https://www.youtube.com/watch?v=0Y7B4h3Mwi8&list=PLdDT8if5attE7GG4L4Annvd9gEhKsPvb9&index=2&ab_channel=OneBitCode).
