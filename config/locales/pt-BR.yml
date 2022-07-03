@@ -9,10 +9,30 @@ pt-BR:
       client:
         one: Cliente
         other: Clientes
+      product:
+        one: Produto
+        other: Produtos
+      discount:
+        one: Desconto
+        other: Descontos
+      comission:
+        one: Comissão
+        other: Comissões
+      user:
+        one: Usuário
+        other: Usuários
+      sale:
+        one: Venda
+        other: Vendas
     attributes:
       client:
         name: "Nome"
         company_name: "Nome da Empresa"
+        document: "Documento"
+        phone: "Telefone"
+        notes: "Notas"
+        Address: "Endereços"
+
   views:
   admin:
     home:
