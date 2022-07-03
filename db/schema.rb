@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_01_233818) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_03_224606) do
   create_table "addresses", force: :cascade do |t|
     t.string "country"
     t.string "city"
@@ -67,6 +67,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_01_233818) do
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "sale_id"
     t.index ["product_id"], name: "index_product_quantities_on_product_id"
     t.index ["user_id"], name: "index_product_quantities_on_user_id"
   end
@@ -77,6 +78,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_01_233818) do
     t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "price"
+    t.string "photo"
   end
 
   create_table "sales", force: :cascade do |t|
