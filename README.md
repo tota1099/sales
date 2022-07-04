@@ -6,5 +6,13 @@ This project was built on the [one bit code course](https://www.youtube.com/watc
 
 ```
 bundle
+rake db:migrate
 rails s
+```
+
+## Deploy
+
+```
+heroku run rake db:migrate
+git push heroku main
 ```
