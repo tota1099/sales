@@ -83,6 +83,7 @@ pt-BR:
         title: "Lista de %{model_label_plural}"
         menu: "Lista"
         breadcrumb: "%{model_label_plural}"
+        no_records: "Sem registros"
       show:
         title: "Detalhes para %{model_label} '%{object_label}'"
         menu: "Mostrar"

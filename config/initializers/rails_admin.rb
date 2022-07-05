@@ -1,7 +1,8 @@
 RailsAdmin.config do |config|
   config.asset_source = :sprockets
 
-  config.main_app_name = ["Representantes Comerciais", ""]
+  require Rails.root.join('lib', 'rails_admin', 'rails_admin_pdf.rb')
+  RailsAdmin::Config::Actions.register(RailsAdmin::Config::Actions::Pdf)
 
   config.navigation_static_links = {
     'Github' => 'https://github.com/tota1099/sales'
@@ -39,21 +40,21 @@ RailsAdmin.config do |config|
       field  :discount
       field  :notes
       field  :product_quantities
-  
+
       field :user_id, :hidden do
         default_value do
           bindings[:view]._current_user.id
         end
       end
     end
-    
+
     edit do
       field  :client
       field  :sale_date
       field  :discount
       field  :notes
       field  :product_quantities
-  
+
       field :user_id, :hidden do
         default_value do
           bindings[:view]._current_user.id
@@ -61,7 +62,7 @@ RailsAdmin.config do |config|
       end
     end
   end
-    
+
   config.model Client do
     create do
       field  :name
@@ -72,14 +73,14 @@ RailsAdmin.config do |config|
       field  :notes
       field  :status
       field  :address
-  
+
       field :user_id, :hidden do
         default_value do
           bindings[:view]._current_user.id
         end
       end
     end
-  
+
     edit do
       field  :name
       field  :company_name
@@ -89,15 +90,15 @@ RailsAdmin.config do |config|
       field  :notes
       field  :status
       field  :address
-  
-  
+
+
       field :user_id, :hidden do
         default_value do
           bindings[:view]._current_user.id
         end
       end
     end
-  
+
     list do
       field  :name
       field  :company_name
@@ -107,10 +108,10 @@ RailsAdmin.config do |config|
       field  :notes
       field  :status
       field  :address
-  
+
     end
   end
-  
+
   config.model ProductQuantity do
     visible false
   end
@@ -128,12 +129,12 @@ RailsAdmin.config do |config|
       field :photo
     end
   end
-  
+
   config.model ProductQuantity do
     edit do
       field :product
       field :quantity
-  
+
       field :user_id, :hidden do
         default_value do
           bindings[:view]._current_user.id
@@ -145,25 +146,25 @@ RailsAdmin.config do |config|
   config.model Discount do
     parent Product
   end
-  
+
   config.model Sale do
     parent User
     weight -2
   end
-  
+
   config.model Comission do
     parent User
     weight -1
   end
-  
+
   config.model Client do
     parent User
   end
-  
+
   config.model ProductQuantity do
     visible false
   end
-  
+
   config.model Address do
     visible false
   end
@@ -178,6 +179,9 @@ RailsAdmin.config do |config|
     edit
     delete
     show_in_app
+    pdf do
+      only User
+    end
 
     ## With an audit adapter, you can add:
     # history_index

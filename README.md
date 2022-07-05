@@ -5,6 +5,7 @@ This project was built on the [one bit code course](https://www.youtube.com/watc
 ## Installation
 
 ```
+sudo apt-get install imagemagick libmagickcore-dev libmagickwand-dev
 bundle
 rake db:migrate
 rails s
